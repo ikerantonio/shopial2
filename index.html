@@ -3,85 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopial - Tu tienda online</title>
+    <title>Shopial - Tu tienda online de confianza</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display="swap" rel="stylesheet">
     <style>
-        /* Estilos básicos */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f7f7f7;
         }
+
         header {
-            background-color: #2b2e4a;
+            background-color: #5f27cd;
             color: #fff;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
         }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
         nav {
             display: flex;
-            justify-content: space-around;
-            background-color: #333;
-            padding: 10px;
+            justify-content: center;
+            background-color: #2d3436;
+            padding: 15px 0;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
             padding: 10px 20px;
-            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
         }
+
         nav a:hover {
-            background-color: #555;
+            background-color: #636e72;
         }
+
         .container {
-            padding: 20px;
+            padding: 50px 20px;
             text-align: center;
         }
+
         .product-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
         }
+
         .product {
             background-color: #fff;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            width: 200px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
+            transition: transform 0.3s;
         }
+
+        .product:hover {
+            transform: translateY(-5px);
+        }
+
         .product img {
             max-width: 100%;
             height: auto;
-            border-radius: 5px;
-        }
-        .product h3 {
-            font-size: 1.2em;
-            color: #333;
-        }
-        .product p {
-            color: #555;
-        }
-        .product .price {
-            font-size: 1.1em;
-            color: #2b2e4a;
-            margin: 10px 0;
-        }
-        #about-section {
-            display: none;
-            background-color: #e8e8e8;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
             border-radius: 8px;
         }
+
+        .product h3 {
+            font-size: 1.4em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .product p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .product .price {
+            font-size: 1.3em;
+            color: #5f27cd;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+
+        .product button {
+            background-color: #5f27cd;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #4c1eb7;
+        }
+
+        #about-section {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            margin: 40px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #about-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #about-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        #contact-section {
+            background-color: #f0f0f0;
+            padding: 50px 20px;
+            margin: 40px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #contact-section form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+            text-align: left;
+        }
+
+        #contact-section input,
+        #contact-section textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        #contact-section textarea {
+            grid-column: 1 / 3;
+            height: 150px;
+        }
+
+        #contact-section button {
+            background-color: #5f27cd;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            grid-column: 1 / 3;
+            justify-self: center;
+        }
+
+        #contact-section button:hover {
+            background-color: #4c1eb7;
+        }
+
         footer {
-            background-color: #333;
+            background-color: #2d3436;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            font-size: 0.9em;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -89,7 +197,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Shopial</h1>
         <p>Tu tienda online de confianza</p>
@@ -106,34 +213,30 @@
         <h2>Productos Destacados</h2>
         <div class="product-grid">
             <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Producto 1">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 1">
                 <h3>Producto 1</h3>
                 <p>Descripción breve del producto 1</p>
                 <p class="price">$19.99</p>
                 <button>Comprar</button>
             </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Producto 2">
-                <h3>Producto 2</h3>
-                <p>Descripción breve del producto 2</p>
-                <p class="price">$29.99</p>
-                <button>Comprar</button>
-            </div>
-            <div class="product">
-                <img src="https://via.placeholder.com/150" alt="Producto 3">
-                <h3>Producto 3</h3>
-                <p>Descripción breve del producto 3</p>
-                <p class="price">$39.99</p>
-                <button>Comprar</button>
-            </div>
+            <!-- Más productos... -->
         </div>
     </div>
 
-    <!-- Sección Nosotros -->
     <div id="about-section">
         <h2>Sobre Nosotros</h2>
         <p>Shopial es una tienda en línea dedicada a ofrecer productos de alta calidad a precios accesibles. Nos enorgullece ser una empresa comprometida con la satisfacción de nuestros clientes, brindando un servicio rápido, seguro y confiable.</p>
         <p>Estamos aquí para ayudarte a encontrar lo que necesitas, con una gran variedad de productos en diferentes categorías. ¡Gracias por confiar en nosotros!</p>
+    </div>
+
+    <div id="contact-section">
+        <h2>Contáctanos</h2>
+        <form>
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea placeholder="Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
     <footer>
@@ -150,6 +253,6 @@
             }
         }
     </script>
-
 </body>
 </html>
+       
